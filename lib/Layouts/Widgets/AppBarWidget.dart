@@ -18,7 +18,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         Icon(Icons.settings, color: ColorsTheme().primaryTextColor),
         SizedBox(width: 25)
       ],
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.transparent,
     );
   }
 }
