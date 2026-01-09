@@ -1,5 +1,5 @@
+import 'package:ditify/Layouts/Screens/HomeScreen.dart';
 import 'package:ditify/Layouts/Widgets/AppBarWidget.dart';
-import 'package:ditify/Layouts/Widgets/SearchBarWidget.dart';
 import 'package:flutter/material.dart';
 import 'Style.dart';
 
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBarWidget(),
-        body: Searchbarwidget(),
+        body: HomeScreen(),
         backgroundColor: ColorsTheme().secondaryBgColor,
       ),
     );

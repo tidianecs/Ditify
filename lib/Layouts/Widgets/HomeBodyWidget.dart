@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+import 'package:ditify/Style.dart';
+
+class HomeBodyWidget extends StatefulWidget {
+  const HomeBodyWidget({super.key});
+
+  @override
+  State<HomeBodyWidget> createState() => _HomeBodyWidgetState();
+}
+
+class _HomeBodyWidgetState extends State<HomeBodyWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 35),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Top Song", style: TextStyle(color: ColorsTheme().primaryTextColor, fontSize: 24)),
+              /*Make a Text Button*/Text("see all", style: TextStyle(color: ColorsTheme().primaryTextColor))
+            ],
+          ),
+          //A horizontal ListViewBuilder inside a widget for the songs
+        ],
+      ),
+    );
+  }
+}
