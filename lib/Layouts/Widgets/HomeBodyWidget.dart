@@ -1,3 +1,4 @@
+import 'package:ditify/Layouts/Widgets/PopularTrackListWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:ditify/Style.dart';
 
@@ -22,7 +23,10 @@ class _HomeBodyWidgetState extends State<HomeBodyWidget> {
               /*Make a Text Button*/Text("see all", style: TextStyle(color: ColorsTheme().primaryTextColor))
             ],
           ),
-          //A horizontal ListViewBuilder inside a widget for the songs
+          SizedBox(
+            height: 300,
+            child: PopularTrackListWidget()
+          )
         ],
       ),
     );

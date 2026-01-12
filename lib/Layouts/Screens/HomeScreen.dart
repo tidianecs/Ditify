@@ -7,11 +7,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Searchbarwidget(),
-        HomeBodyWidget()
-      ],
+    return SafeArea(
+      child: Column(
+        children: [
+          Searchbarwidget(),
+          HomeBodyWidget()
+        ],
+      ),
     );
   }
 }
