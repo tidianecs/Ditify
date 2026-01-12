@@ -1,4 +1,5 @@
 import 'package:ditify/Layouts/Screens/HomeScreen.dart';
+import 'package:ditify/Layouts/Screens/LoadingScreen.dart';
 import 'package:ditify/Layouts/Widgets/AppBarWidget.dart';
 import 'package:ditify/Providers/TopArtitsProvider.dart';
 import 'package:ditify/Providers/TrackProvider.dart';
@@ -25,11 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBarWidget(),
-        body: HomeScreen(),
-        backgroundColor: ColorsTheme().secondaryBgColor,
-      ),
+      home: LoadingScreen()
     );
   }
 }
