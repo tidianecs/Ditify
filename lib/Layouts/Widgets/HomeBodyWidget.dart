@@ -1,3 +1,4 @@
+import 'package:ditify/Layouts/Widgets/PopularArtistListWidget.dart';
 import 'package:ditify/Layouts/Widgets/PopularTrackListWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:ditify/Style.dart';
@@ -14,7 +15,9 @@ class _HomeBodyWidgetState extends State<HomeBodyWidget> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 35),
-      child: Column(
+      child: ListView(
+        shrinkWrap: true,
+        physics: const ScrollPhysics(),
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -24,8 +27,20 @@ class _HomeBodyWidgetState extends State<HomeBodyWidget> {
             ],
           ),
           SizedBox(
-            height: 300,
+            height: MediaQuery.of(context).size.height / 4, 
             child: PopularTrackListWidget()
+          ),
+          SizedBox(height: 50),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Top Artists", style: TextStyle(color: ColorsTheme().primaryTextColor, fontSize: 24)),
+              /*Make a Text Button*/Text("see all", style: TextStyle(color: ColorsTheme().primaryTextColor))
+            ],
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height / 4, 
+            child: PopularArtistListWidget()
           )
         ],
       ),

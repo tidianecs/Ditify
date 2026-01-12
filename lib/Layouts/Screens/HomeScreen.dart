@@ -8,10 +8,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
+      child: ListView(
         children: [
           Searchbarwidget(),
-          HomeBodyWidget()
+          Expanded(child: HomeBodyWidget())
         ],
       ),
     );
