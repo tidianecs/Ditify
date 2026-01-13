@@ -43,7 +43,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
             ),
             SizedBox(height: 20),
             CircularProgressIndicator(
-              color: Colors.green,
+              color: Colors.white,
             ),
           ],
         ),

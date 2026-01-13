@@ -1,3 +1,4 @@
+import 'package:ditify/Layouts/Screens/ArtistScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:ditify/Providers/TopArtitsProvider.dart';
 import 'package:ditify/Style.dart';
@@ -19,7 +20,7 @@ class _PopularTrackListWidgetState extends State<PopularArtistListWidget> {
       future: artistProvider.loadTopArtists(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(child: CircularProgressIndicator());
+          return Center(child: CircularProgressIndicator(color: Colors.white));
         }
 
         if (artistProvider.artists.isEmpty) {
@@ -33,15 +34,22 @@ class _PopularTrackListWidgetState extends State<PopularArtistListWidget> {
           itemCount: artistProvider.artists.length,
           itemBuilder: (context, index) {
             final artist = artistProvider.artists[index];
-            return Column(
-              children: [
-                CircleAvatar(
-                  radius: 45,
-                  backgroundImage: NetworkImage(artist.picture),
-                ),
-                SizedBox(height: 8),
-                Text(artist.name, style: TextStyle(color: ColorsTheme().primaryTextColor, fontSize: 12)),
-              ],
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => Artistscreen(artist: artist))
+                );
+              },
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    radius: 45,
+                    backgroundImage: NetworkImage(artist.picture),
+                  ),
+                  SizedBox(height: 8),
+                  Text(artist.name, style: TextStyle(color: ColorsTheme().primaryTextColor, fontSize: 12)),
+                ],
+              ),
             );
           },
         );

@@ -13,7 +13,6 @@ class TopArtistProvider extends ChangeNotifier {
     );
 
     final data = jsonDecode(res.body);
-    print(data);
     artists = (data['data'] as List)
         .map((e) => TopArtist.fromJson(e))
         .toList();
