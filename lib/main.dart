@@ -1,6 +1,7 @@
 import 'package:ditify/Layouts/Screens/HomeScreen.dart';
 import 'package:ditify/Layouts/Screens/LoadingScreen.dart';
 import 'package:ditify/Layouts/Widgets/AppBarWidget.dart';
+import 'package:ditify/Providers/ArtistAlbumProvider.dart';
 import 'package:ditify/Providers/ArtistTrackProvider.dart';
 import 'package:ditify/Providers/TopArtitsProvider.dart';
 import 'package:ditify/Providers/TrackProvider.dart';
@@ -14,7 +15,8 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (_) => TrackProvider()),
         ChangeNotifierProvider(create: (_) => TopArtistProvider()),
-        ChangeNotifierProvider(create: (_) => ArtistTrackProvider())
+        ChangeNotifierProvider(create: (_) => ArtistTrackProvider()),
+        ChangeNotifierProvider(create: (_) => ArtistAlbumProvider())
       ],
       child: const MyApp()
     ),

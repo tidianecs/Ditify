@@ -16,7 +16,6 @@ class ArtistTrackProvider extends ChangeNotifier {
     );
 
     final data = jsonDecode(res.body);
-    print(data);
 
     tracks = (data['data'] as List)
         .map((e) => Track.fromJson(e))

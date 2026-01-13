@@ -1,4 +1,5 @@
 import 'package:ditify/Layouts/Widgets/AppBarWidget.dart';
+import 'package:ditify/Layouts/Widgets/ArtistAlbumsListWidget.dart';
 import 'package:ditify/Layouts/Widgets/ArtistTracksListWidget.dart';
 import 'package:ditify/Models/TopArtistModel.dart';
 import 'package:ditify/Style.dart';
@@ -54,6 +55,17 @@ class Artistscreen extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 2,
             child: Artisttrackslistwidget(artistId: artist.id)
           ),
+          SizedBox(height: MediaQuery.of(context).size.height / 50),
+          Row(
+            children: [
+              SizedBox(width: MediaQuery.of(context).size.width / 10),
+              Text("Albums", style: TextStyle(color: ColorsTheme().primaryTextColor, fontSize: 24))
+            ],
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height / 2,
+            child: ArtistAlbumsListWidget(artistId: artist.id)
+          )
         ],
       ),
       backgroundColor: ColorsTheme().secondaryBgColor,
