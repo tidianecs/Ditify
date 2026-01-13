@@ -1,3 +1,4 @@
+import 'package:ditify/Layouts/Screens/TrackScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:ditify/Providers/ArtistTrackProvider.dart';
 import 'package:provider/provider.dart';
@@ -54,7 +55,16 @@ class _ArtisttrackslistwidgetState extends State<Artisttrackslistwidget> {
       itemBuilder: (context, index) {
         final track = trackProvider.tracks[index];
 
-        return Column(
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => TrackScreen(track: track),
+              ),
+            );
+          },
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
@@ -78,7 +88,7 @@ class _ArtisttrackslistwidgetState extends State<Artisttrackslistwidget> {
               ),
             ),
           ],
-        );
+        ));
       },
     );
   }

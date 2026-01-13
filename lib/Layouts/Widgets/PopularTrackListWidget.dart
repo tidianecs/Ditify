@@ -1,3 +1,4 @@
+import 'package:ditify/Layouts/Screens/TrackScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:ditify/Providers/TrackProvider.dart';
 import 'package:ditify/Style.dart';
@@ -33,19 +34,29 @@ class _PopularTrackListWidgetState extends State<PopularTrackListWidget> {
           itemCount: trackProvider.popularTracks.length,
           itemBuilder: (context, index) {
             final track = trackProvider.popularTracks[index];
-            return Container(
-             // width: 150,
-             // height: 100,
-             // margin: EdgeInsets.only(right: 10),
-              child: GridTile(
-               // header: Icon(Icons.menu),
-                footer: Column(
-                  children: [
-                    Text(track.title, style: TextStyle(color: ColorsTheme().primaryTextColor, fontSize: 12)),
-                    Text(track.artist.name, style: TextStyle(color: ColorsTheme().primaryTextColor, fontSize: 10)),
-                  ],
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => TrackScreen(track: track),
+                  ),
+                );
+              },
+              child: Container(
+               // width: 150,
+               // height: 100,
+               // margin: EdgeInsets.only(right: 10),
+                child: GridTile(
+                 // header: Icon(Icons.menu),
+                  footer: Column(
+                    children: [
+                      Text(track.title, style: TextStyle(color: ColorsTheme().primaryTextColor, fontSize: 12)),
+                      Text(track.artist.name, style: TextStyle(color: ColorsTheme().primaryTextColor, fontSize: 10)),
+                    ],
+                  ),
+                  child: Image.network(track.album.cover),
                 ),
-                child: Image.network(track.album.cover),
               ),
             );
           },
