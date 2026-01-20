@@ -1,3 +1,4 @@
+import 'package:ditify/Layouts/Screens/AlbumScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ditify/Providers/ArtistAlbumProvider.dart';
@@ -55,7 +56,16 @@ class _ArtistAlbumsListWidgetState extends State<ArtistAlbumsListWidget> {
       itemBuilder: (context, index) {
         final album = albumProvider.albums[index];
 
-        return Column(
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => AlbumScreen(albumId: album.id),
+              ),
+            );
+          },
+          child:Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
@@ -86,7 +96,7 @@ class _ArtistAlbumsListWidgetState extends State<ArtistAlbumsListWidget> {
               ),
             ),
           ],
-        );
+        ));
       },
     );
   }

@@ -1,5 +1,6 @@
 import 'package:ditify/Layouts/Widgets/HomeBodyWidget.dart';
 import 'package:ditify/Layouts/Widgets/SearchBarWidget.dart';
+import 'package:ditify/Layouts/Widgets/SearchResultsWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:ditify/Style.dart';
 import 'package:ditify/Layouts/Widgets/AppBarWidget.dart';
@@ -15,6 +16,7 @@ class HomeScreen extends StatelessWidget {
           child: ListView(
             children: [
               Searchbarwidget(),
+              SearchResultsWidget(),
               Expanded(child: HomeBodyWidget())
             ],
           ),
